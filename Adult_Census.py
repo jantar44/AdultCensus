@@ -1,6 +1,9 @@
 
 # coding: utf-8
 
+# ADULT CENSUS
+# Prediction task is to determine whether a person makes over 50K a year. 
+# 
 # 1. Import of library and data
 # 2. Preparation of data<br>
 # 2a. Age visualisation and grouping<br>
@@ -18,9 +21,7 @@
 # 3. Preparing data for model
 # 4. Model comparison
 
-# <br>
-# <b>1. Import of library and data</b>
-# <br>
+# 1. Import of library and data
 
 # In[1]:
 
@@ -41,11 +42,6 @@ import time
 
 
 raw_train = pd.read_csv('Data/train.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'] )
-
-
-# In[3]:
-
-
 raw_test = pd.read_csv('Data/test.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'])
 
 
@@ -88,9 +84,7 @@ test['result'] = test['result'].map({' <=50K.':1, ' >50K.':2}).astype(int)
 test['native-country'] = test['native-country'].map({' United-States':1, ' Cuba':2, ' Jamaica':3, ' India':4, ' ?':5, ' Mexico':6, ' South':7, ' Puerto-Rico':8, ' Honduras':9, ' England':10, ' Canada':11, ' Germany':12, ' Iran':13, ' Philippines':14, ' Italy':15, ' Poland':16, ' Columbia':17, ' Cambodia':18, ' Thailand':19, ' Ecuador':20, ' Laos':21, ' Taiwan':22, ' Haiti':23, ' Portugal':24, ' Dominican-Republic':25, ' El-Salvador':26, ' France':27, ' Guatemala':28, ' China':29, ' Japan':30, ' Yugoslavia':31, ' Peru':32, ' Outlying-US(Guam-USVI-etc)':33, ' Scotland':34, ' Trinadad&Tobago':35, ' Greece':36, ' Nicaragua':37, ' Vietnam':38, ' Hong':39, ' Ireland':40, ' Hungary':41}).astype(int) 
 
 
-# <br>
 # 2a. Age visualisation and grouping
-# <br>
 
 # In[7]:
 
@@ -147,9 +141,7 @@ age_x = [0,1,2]
 plt.plot(age_x, age, 'bo')
 
 
-# <br>
 # 2b. Relatioship visualisation and grouping
-# <br>
 
 # In[11]:
 
@@ -187,9 +179,7 @@ rel_x = [0,1]
 plt.plot(rel_x, rel, 'bo')
 
 
-# <br>
 # 2c. Workclass visualisation and grouping
-# <br>
 
 # In[15]:
 
@@ -240,9 +230,7 @@ plt.plot(work_x,p(work_x),"r--")
 print("y=%.6fx+%.6f"%(z[0],z[1]))
 
 
-# <br>
 # 2d. Education visualisation and grouping
-# <br>
 
 # In[19]:
 
@@ -299,9 +287,7 @@ edu_x = [0,1,13,14,16]
 plt.plot(edu_x, edu, 'bo', ls = '-')
 
 
-# <br>
 # 2e. Martial status visualisation and grouping
-# <br>
 
 # In[23]:
 
@@ -345,9 +331,7 @@ mar_x = [0,1]
 plt.plot(mar_x, mar, 'bo')
 
 
-# <br>
 # 2f. Race visualisation and grouping
-# <br>
 
 # In[28]:
 
@@ -379,9 +363,7 @@ race_x = [0,1]
 plt.plot(race_x, race, 'bo', ls = '-')
 
 
-# <br>
 # 2g. Sex visualisation and grouping
-# <br>
 
 # In[31]:
 
@@ -392,9 +374,7 @@ sex_x = [2,1]
 plt.plot(sex_x, sex, 'bo')
 
 
-# <br>
 # 2h. Native country visualisation and grouping
-# <br>
 
 # In[32]:
 
@@ -425,9 +405,7 @@ nation_x = [0,1,2,3]
 plt.plot(nation_x, nation, 'bo')
 
 
-# <br>
 # 2i. Occupation visualisation and grouping
-# <br>
 
 # In[35]:
 
@@ -488,9 +466,7 @@ ocup_x = [0,1,2]
 plt.plot(ocup_x, ocup, 'bo')
 
 
-# <br>
 # 2j. Hours per week visualisation and grouping
-# <br>
 
 # In[41]:
 
@@ -528,9 +504,7 @@ hour_x = [0,1,2]
 plt.plot(hour_x, hour, 'bo')
 
 
-# <br>
 # 2k. Capital gain visualisation and grouping
-# <br>
 
 # In[45]:
 
@@ -553,9 +527,7 @@ gain_x = [0,1,2]
 plt.plot(gain_x, gain, 'bo')
 
 
-# <br>
 # 2l. Capital loss visualisation and grouping
-# <br>
 
 # In[47]:
 
@@ -578,9 +550,7 @@ loss_x = [0,1,2]
 plt.plot(loss_x, loss, 'bo')
 
 
-# <br>
-# <b>3. Preparing data for model</b>
-# <br>
+# 3. Preparing data for model
 
 # In[49]:
 
@@ -623,7 +593,7 @@ testX.drop(['native-country'], axis = 1, inplace = True)
 testX.drop(['sex'], axis = 1, inplace = True)
 
 
-# <b>4. Model comparison</b>
+# 4. Model comparison<
 
 # In[54]:
 
