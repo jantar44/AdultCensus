@@ -28,7 +28,6 @@
 
 import pandas as pd 
 import matplotlib
-get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
 import scipy as sp
 import IPython
@@ -41,8 +40,8 @@ import time
 # In[2]:
 
 
-raw_train = pd.read_csv('Data/train.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'] )
-raw_test = pd.read_csv('Data/test.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'])
+raw_train = pd.read_csv('/home/jan/Dokumenty/PycharmProjects/AdultCensus/train.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'] )
+raw_test = pd.read_csv('/home/jan/Dokumenty/PycharmProjects/AdultCensus/test.csv', header=None, index_col = False, names = ['age','workclass','fnlwgt','education','education-num','marital-status','occupation','relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country','result'])
 
 
 # <br>
