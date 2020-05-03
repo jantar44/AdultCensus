@@ -7,3 +7,4 @@ setup(
    author='Me',
    packages=['adult-census'],
    install_requires=['random', 'time','sklearn','numpy','scipy','pandas','matplotlib','IPython'],
+)
